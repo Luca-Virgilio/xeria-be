@@ -1,0 +1,235 @@
+html, body {
+  height: 100%;
+}
+
+a {
+  color: white
+}
+
+.container-all {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -50px;
+}
+
+#push {
+  height: 50px;
+}
+
+.footer {
+  height: 50px;
+}
+
+body {
+  font-family: "Cabin", Arial, sans-serif;
+  color: black;
+  background-color: #8df5e169;
+  /* background-color: #6c757d26; */
+}
+
+.container-header {
+  background-color: #007bff;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+}
+
+.container-header-home {
+  background-color: #007bff;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.container-home {
+  padding-right: 1rem;
+}
+
+@media (max-width: 576px) {
+  .container-header {
+    padding: 1rem 0rem;
+  }
+  .container-question {
+    padding: 2rem 0rem;
+  }
+  .title-container {
+    margin: 1rem 0rem;
+  }
+  .container-verify {
+    margin-top: 0rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  #uni {
+    display: none;
+  }
+}
+
+@media (min-width: 577px) {
+  .container-question {
+    padding: 3rem;
+  }
+  .container-verify {
+    margin-top: 3rem;
+    padding: 2rem;
+  }
+  .title-container {
+    margin: 4rem 0rem;
+  }
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto
+}
+
+.logo {
+  max-width: 100px;
+  height: auto;
+  padding: 1rem;
+}
+
+.card {
+  background-color: inherit;
+  padding: 1rem;
+}
+
+.title-container {
+  /* margin: 4rem 0rem; */
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-title-description {
+  text-align: center;
+  border: none;
+}
+
+.review {
+  margin-right: -16px;
+  margin-left: -16px;
+  margin-bottom: 0.5em;
+}
+
+.container-main {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.container-cf {
+  flex-grow: 2;
+  /* padding: 2rem 3rem 0rem 1rem; */
+  max-width: 500px;
+  border: none;
+}
+
+input {
+  height: 48px !important;
+}
+
+.go-btn {
+  flex-grow: 1;
+  margin: 2rem;
+  max-width: 200px;
+}
+
+.container-question {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.spinner-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+#spin {
+  height: 70px;
+  width: 70px;
+}
+
+#cand1_button, #cand2_button {
+  background-color: white;
+}
+
+.container-cand-button {
+  padding: 1rem;
+}
+
+.thanks {
+  margin: 2rem 3rem;
+}
+
+.thanksgiving-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 3rem;
+  text-align: center;
+}
+
+#txId-value {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 75vw;
+}
+
+.tx-id-description {
+  margin-top: 1rem;
+}
+
+.container-question-result {
+  padding: 0rem 0.5rem 2rem 0.5rem;
+  text-align: center;
+}
+
+.container-graph {
+  margin: 3rem
+}
+
+.footer {
+  padding: 1rem 1rem;
+  justify-content: left;
+  display: flex;
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
