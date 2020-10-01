@@ -12,7 +12,11 @@
     "express": "~4.16.1",
     "mongoose": "^5.9.20",
     "morgan": "~1.9.1",
-    "node-fetch": "^2.6.0"
+    "ndarray": "^1.0.19",
+    "ndarray-ops": "^1.2.2",
+    "node-fetch": "^2.6.0",
+    "onnxjs": "^0.1.8",
+    "onnxjs-node": "^1.4.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

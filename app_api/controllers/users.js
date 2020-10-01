@@ -17,7 +17,7 @@ const getUsers = async (req, res) => {
 const getUser = async (req, res) => {
     try {
         const { id } = req.params;
-        if (!id) throw new Error ("Id is null or undefined")
+        if (!id) throw new Error("Id is null or undefined")
         const user = await UserDB.findById(id);
         if (user) {
             res.status(200).json(user);
@@ -32,11 +32,11 @@ const getUser = async (req, res) => {
 const createUser = async (req, res) => {
     try {
         const { cf, name } = req.body;
-        if (!cf || !name) throw new Error ("cf or name is null or undefined")
+        if (!cf || !name) throw new Error("cf or name is null or undefined")
         const salt = await pdkdf2.getSalt();
         const hash = await pdkdf2.createHash(cf, salt);
         const newUser = await UserDB.create({ cf: hash, name: name });
-            res.status(201).json({ "user": newUser });
+        res.status(201).json({ "user": newUser });
     } catch (error) {
         console.log(error);
         return res.status(400).json({ "error": error.message });

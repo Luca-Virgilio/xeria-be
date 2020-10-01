@@ -9,6 +9,14 @@ const main = async _ => {
   const debug = require('debug')('v-monero-be:server');
   const http = require('http');
 
+  require('onnxjs');
+  // Use package 'onnxjs-node' to load ONNXRuntime backend.
+  require('onnxjs-node');
+
+
+  const {createSalt} = require('../app_api/lib/pdkdf2')
+  const assert = require('assert');
+
   /**
    * Get port from environment and store in Express.
    */
@@ -23,9 +31,19 @@ const main = async _ => {
   const server = http.createServer(app);
 
   // -------- CODE BEFORE START SERVER ----------
+ 
 
-  const {createSalt} = require('../app_api/lib/pdkdf2')
   await createSalt();
+
+  session = new onnx.InferenceSession({backendHint: 'onnxruntime'});
+  session2 = new onnx.InferenceSession({ backendHint: 'onnxruntime' });
+
+  // Load an ONNX model. This model is Resnet50 that takes a 1*3*224*224 image and classifies it.
+  await session2.loadModel("/home/luca/Scrivania/code/xeria-be/app_api/lib/resnet50_8.onnx");
+
+  // Load an ONNX model. This model takes two tensors of the same size and return their sum.
+  await session.loadModel('/home/luca/Scrivania/code/xeria-be/app_api/lib/add.onnx');
+
 
   /**
    * Listen on provided port, on all network interfaces.

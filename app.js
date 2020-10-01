@@ -7,6 +7,8 @@ require('./app_api/models/db');
 
 const indexRouter = require('./app_api/routes/index');
 const userRouter = require('./app_api/routes/users');
+const onnxRouter = require('./app_api/routes/onnxModel');
+
 
 
 const app = express();
@@ -27,6 +29,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', userRouter);
-
+app.use('/onnx', onnxRouter);
 
 module.exports = app;

@@ -1,5 +1,7 @@
 # XERIA-BACKEND
 
+First install MongoDB database, Node js and npm. 
+
 Install dependencies
 ```
 npm i
